@@ -90,17 +90,20 @@
 <!-- Mensajes aparecerán aquí -->
 
 
-<div class="section">
-    <h2>💌 Deja un mensaje para Iker</h2>
-  <input type="text" id="guestName" placeholder="Tu nombre..." style="width:100%; padding:8px; margin-bottom:10px; border-radius:8px;">
-  <textarea id="guestMessage" placeholder="Escribe tu mensaje aquí..." rows="4" style="width:100%; padding:8px; border-radius:8px;"></textarea>
-  <br>
-  <button class="rsvp-button" onclick="saveMessage()">Guardar Mensaje</button>
-  <div id="messages"></div>
+<div class="section message-section">
+  <h2>💌 Deja un mensaje para Iker</h2>
+  <input type="text" id="guestName" placeholder="Tu nombre..." class="message-input">
+  <textarea id="guestMessage" placeholder="Escribe tu mensaje aquí..." rows="4" class="message-textarea"></textarea>
+  
+  <div class="message-buttons">
+    <button class="rsvp-button" onclick="saveMessage()">Guardar Mensaje</button>
     <button class="rsvp-button" onclick="window.location.href='mensajes.html'">
-        💌 Ver Mensajes para Iker
-      </button>
+      💌 Ver Mensajes para Iker
+    </button>
   </div>
+
+  <div id="messages"></div>
+</div>
 
   <script>
     function saveMessage() {
