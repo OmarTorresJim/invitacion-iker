@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bautizo y Primer Año de Iker Damián</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <button id="toggle-theme">🌙 Cambiar a modo noche</button>
+
+    <div class="container">
+  <header>
+    
+    <h1>✨ Con alegría invitamos a celebrar ✨</h1>
+    <h1>El Bautizo y Primer Año de<br>Iker Damián Torres Flores</h1>
+
+    <div class="carousel">
+      <img src="../IMG/1.jpg" class="active" alt="Iker 1">
+      <img src="../IMG/2.jpeg" alt="Iker 2">
+      <img src="../IMG/3.jpeg" alt="Iker 3">
+      <img src="../IMG/4.jpg" alt="Iker 4">
+      <img src="../IMG/5.jpg" alt="Iker 5">
+      <img src="../IMG/6.jpg" alt="Iker 6">
+      <img src="../IMG/7.jpg" alt="Iker 7">
+      <img src="../IMG/8.png" alt="Iker 8">
+      <img src="../IMG/9.jpg" alt="Iker 9">
+      <img src="../IMG/10.jpg" alt="Iker 10">
+    </div>
+
+    <p class="celebration-date"><strong>📅 Fecha:</strong> 7 de Junio de 2025</p>
+    <p class="family-info">
+      <strong>👨‍👩‍👦 Papás:</strong> Aislin Flores Cruz & Omar Aldair Torres Jiménez<br>
+      <strong>🕊️ Padrino:</strong> Gilberto Andrade Jiménez
+    </p>
+    
+  </header>
+  <div id="countdown" class="countdown-container">
+    ⏳ Cargando cuenta regresiva...
+  </div>
+
+  <div class="section">
+    <h2>⛪🕊️Ceremonia Religiosa ⛪🕊️</h2>
+    <p><strong>Lugar:</strong> Parroquia de San Judas Tadeo</p>
+    <p><strong>📍Dirección:</strong> Pachtli, Curtidores, 56366 Chimalhuacán, Méx.</p>
+    <p><strong>🕑Hora:</strong> 2:00 p.m.</p>
+    <a class="map-link" href="https://maps.app.goo.gl/B1oqZcocyVwwLW1L8" target="_blank">Ver en Google Maps</a>
+  </div>
+
+  <div class="section">
+    <h2>🎉 Recepción y Festejo</h2>
+    <p><strong>📍Dirección:</strong> C. Cerezo 26a Lt35, Tlatel Xochitenco, 56366 Chimalhuacán, Méx.</p>
+    <p><strong> 🕑Hora:</strong> A partir de las 5:00 p.m.</p>
+    <a class="map-link" href="https://maps.app.goo.gl/3pdxyi4gU1D7j87P7" target="_blank">Ver en Google Maps</a>
+  </div>
+
+  <div class="section music-icon">
+    <p class="dedicatoria">
+      "Gracias por acompañarnos en este momento tan especial. Con amor y fe, compartimos con ustedes la bendición de ver crecer a nuestro pequeño Iker Damián. — Aislin & Omar"
+    </p>
+    <div class="notas">
+      <div class="note">🎵</div>
+      <div class="note">🎶</div>
+      <div class="note">🎵</div>
+    </div>
+
+    <audio class="audio" autoplay loop>
+      <source src="/VIDEOS/caja-musical.mpeg" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="section">
+    <h2>¿Podrás acompañarnos a celebrar este importante momento?</h2>
+    <button class="rsvp-button" onclick="window.location.href='https://wa.me/525620952765?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Iker%20Dami%C3%A1n!'">
+      Confirmar Asistencia
+    </button>
+  </div>
+
+  <script src="../JS/script.js"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<!-- Mensajes aparecerán aquí -->
+
+
+<div class="section">
+    <h2>💌 Deja un mensaje para Iker</h2>
+  <input type="text" id="guestName" placeholder="Tu nombre..." style="width:100%; padding:8px; margin-bottom:10px; border-radius:8px;">
+  <textarea id="guestMessage" placeholder="Escribe tu mensaje aquí..." rows="4" style="width:100%; padding:8px; border-radius:8px;"></textarea>
+  <br>
+  <button class="rsvp-button" onclick="saveMessage()">Guardar Mensaje</button>
+  <div id="messages"></div>
+    <button class="rsvp-button" onclick="window.location.href='mensajes.html'">
+        💌 Ver Mensajes para Iker
+      </button>
+  </div>
+
+  <script>
+    function saveMessage() {
+      const name = document.getElementById('guestName').value.trim();
+      const message = document.getElementById('guestMessage').value.trim();
+    
+      if (!message || !name) {
+        alert("Por favor ingresa tu nombre y un mensaje.");
+        return;
+      }
+    
+      const storedMessages = JSON.parse(localStorage.getItem('ikerMessages')) || [];
+      storedMessages.push({ name, message });
+      localStorage.setItem('ikerMessages', JSON.stringify(storedMessages));
+    
+      alert("¡Gracias por tu mensaje!");
+      document.getElementById('guestName').value = '';
+      document.getElementById('guestMessage').value = '';
+    }
+    </script>
+
+
+
+  <!-- Mensajes aparecerán aquí -->
+</body>
+</html>
