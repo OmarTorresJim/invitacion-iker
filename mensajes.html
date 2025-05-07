@@ -5,7 +5,7 @@
   <title>Mensajes para Iker</title>
   <link rel="stylesheet" href="CSS/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="JS/script.js"></script>
+  
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
@@ -101,7 +101,7 @@
     }
   
     .balloon1 { left: 5%; top: 10%; background: #ffab91; animation-delay: 0s; }
-    .balloon2 { right: 5%; top: 20%; background: #ce93d8; animation-delay: 1s; }
+    .balloon2 { right: 5%; top: 20%; background: #c893d8; animation-delay: 1s; }
     .balloon3 { left: 10%; top: 40%; background: #81d4fa; animation-delay: 2s; }
   
     @keyframes floatBalloon {
@@ -112,6 +112,7 @@
   
 </head>
 <body>
+  <button id="toggle-theme">🌙 Cambiar a modo noche</button>
   <div class="balloon balloon1"></div>
   <div class="balloon balloon2"></div>
   <div class="balloon balloon3"></div>
@@ -144,6 +145,27 @@
       });
     }
   </script>
+
+<audio id="background-audio" autoplay loop muted>
+  <source src="VIDEOS/caja-musical.mpeg" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+<script>
+  // Intentar reproducir el audio tan pronto como sea posible
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-audio');
+    audio.muted = false; // Intentamos quitar mute después de carga
+    audio.play().catch(error => {
+      // Si no se puede reproducir automáticamente, esperar interacción
+      document.addEventListener('click', () => {
+        audio.play();
+      }, { once: true });
+    });
+  });
   
+</script>
+
+<script src="JS/script.js"></script>
 </body>
 </html>

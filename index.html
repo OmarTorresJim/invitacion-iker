@@ -15,8 +15,8 @@
     <div class="container">
   <header>
     
-    <h1>✨ Con alegría invitamos a celebrar ✨</h1>
-    <h1>El Bautizo y Primer Año de<br>Iker Damián Torres Flores</h1>
+    <h1>✨Con Mucha Alegría Te Invitamos a Celebrar✨</h1>
+    <h1>El Bautizo y Primer Año de<br>👶Iker Damián Torres Flores👶</h1>
 
     <div class="carousel">
       <img src="IMG/1.jpg" class="active" alt="Iker 1">
@@ -44,7 +44,7 @@
 
   <div class="section">
     <h2>🙏 Ceremonia Religiosa</h2>
-    <p>Con gran emoción los invitamos a ser testigos de este momento tan especial en la vida de Iker Damián.</p>
+    <p>Con gran emoción los invitamos a ser testigos de este momento tan especial en la vida de Iker Damián.👶</p>
     <p><strong>📍 Parroquia:</strong> San Judas Tadeo</p>
     <p><strong>📌 Dirección:</strong> Pachtli, Curtidores, 56366 Chimalhuacán, Estado de México</p>
     <p><strong>🕑 Hora:</strong> 2:00 p.m.</p>
@@ -71,10 +71,25 @@
       <div class="note">🎵</div>
     </div>
 
-    <audio class="audio" autoplay loop>
+    <audio id="background-audio" autoplay loop muted>
       <source src="VIDEOS/caja-musical.mpeg" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
     </audio>
-  </div>
+    
+    <script>
+      // Intentar reproducir el audio tan pronto como sea posible
+      window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('background-audio');
+        audio.muted = false; // Intentamos quitar mute después de carga
+        audio.play().catch(error => {
+          // Si no se puede reproducir automáticamente, esperar interacción
+          document.addEventListener('click', () => {
+            audio.play();
+          }, { once: true });
+        });
+      });
+    </script>
+    
 
   <div class="section">
     <h2>¿Podrás acompañarnos a celebrar este importante momento?</h2>
