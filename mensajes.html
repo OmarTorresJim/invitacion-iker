@@ -8,67 +8,116 @@
   <script src="JS/script.js"></script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+  
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #fff8e1, #fbe9e7);
-      color: #6d4c41;
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #fce4ec);
+      color: #4e342e;
       padding: 20px;
       animation: fadeIn 1.5s ease-in-out;
+      position: relative;
     }
-
+  
     header {
       text-align: center;
       margin-bottom: 20px;
-      animation: fadeInTitle 1.5s ease-in-out;
+      animation: popIn 1.5s ease-in-out;
     }
-
+  
     h1 {
-      color: #d4af37;
-      font-size: 2em;
+      color: #ff8a65;
+      font-size: 2.2em;
       margin-bottom: 10px;
+      text-shadow: 2px 2px #ffe0b2;
     }
-
+  
+    p {
+      font-size: 1.1em;
+    }
+  
     .section {
-      background: white;
-      border-radius: 12px;
+      background: #ffffff;
+      border-radius: 20px;
       padding: 20px;
       margin: 10px auto;
       max-width: 600px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      animation: fadeIn 1.5s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      animation: floatIn 0.8s ease forwards;
+      position: relative;
     }
-
+  
     .rsvp-button {
-      background-color: #d4af37;
+      background-color: #81d4fa;
       color: white;
       padding: 10px 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       font-size: 1em;
       cursor: pointer;
-      transition: background 0.3s;
-      margin-top: 10px;
+      transition: background 0.3s ease;
+      margin-top: 15px;
     }
-
+  
     .rsvp-button:hover {
-      background-color: #c19e32;
+      background-color: #4fc3f7;
     }
-
+  
+    /* Animaciones */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes fadeInTitle {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+  
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  
+    @keyframes floatIn {
+      0% { transform: translateY(15px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  
+    /* Decoración adicional: globos flotando */
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: #ffd54f;
+      border-radius: 50% 50% 45% 45%;
+      animation: floatBalloon 5s ease-in-out infinite;
+      z-index: -1;
+    }
+  
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #a1887f;
+    }
+  
+    .balloon1 { left: 5%; top: 10%; background: #ffab91; animation-delay: 0s; }
+    .balloon2 { right: 5%; top: 20%; background: #ce93d8; animation-delay: 1s; }
+    .balloon3 { left: 10%; top: 40%; background: #81d4fa; animation-delay: 2s; }
+  
+    @keyframes floatBalloon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
   </style>
+  
 </head>
 <body>
-
+  <div class="balloon balloon1"></div>
+  <div class="balloon balloon2"></div>
+  <div class="balloon balloon3"></div>
+  
   <header>
-    <h1>💌 Mensajes para Iker Damián 💌</h1>
+    <h1>👶💌 Mensajes para Iker Damián 💌🎉</h1>
     <p>Gracias por dejar tu mensaje lleno de amor y buenos deseos.</p>
     <button class="rsvp-button" onclick="window.location.href='index.html'">← Volver a la invitación</button>
   </header>
